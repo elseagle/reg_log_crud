@@ -41,7 +41,15 @@ const UserSchema = new Schema({
     last_login:{
             type: Date,
             default: Date.now
+    },
+
+    isVerified:{
+            type: Boolean,
+            default: false
     }
 })
 
+
+
 module.exports = mongoose.model('users', UserSchema);
+
