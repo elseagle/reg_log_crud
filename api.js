@@ -48,7 +48,7 @@ app.post('/register', (req, res)=> {
                             let transporter = nodemailer.createTransport({ 
                                 // host: 'gmail.com', 
                                 port: 465, 
-                                auth: { user: 'seaglenation@gmail.com', pass: 'ogundowole' },
+                                auth: { user: '', pass: '' },
                                 secure: true,
                                 service: 'gmail'
                             });
@@ -57,7 +57,7 @@ app.post('/register', (req, res)=> {
                                 from: 'seaglenation@gmail.com',
                                 to: newUser.email,
                                 subject: 'Account Verification Token',
-                                text: 'Hello,\n\n' + 'Please verify your account by using your email and this token: ' + token.token + " as end points to \n localhost:2001/confirmation"
+                                text: 'Hello,\n\n' + 'Please verify your account by using your email and this token: ' + token.token + " as parameters to \n localhost:2001/confirmation"
                             };
                             transporter.sendMail(mailOptions, function (err) {
                                 if (err) throw err;
